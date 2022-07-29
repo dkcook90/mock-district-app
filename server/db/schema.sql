@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS district_db;
+CREATE DATABASE district_db;
