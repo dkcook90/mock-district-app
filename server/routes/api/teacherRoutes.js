@@ -47,6 +47,32 @@ router.post("/", async (req, res) => {
   }
 });
 
+//update data for single teacher from database by using that teachers id from request params /api/teachers/:id PUT
+router.put('/:id', async (req, res) => {
+  try {
+    const teacherData = await Teacher.update({
+      // these are the fields we are allowing the user to update, currently it is only subject and school ID as the name of the teacher is not likely to change that frequently
+      subject: req.body.subject,
+      school_id: req.body.school_id,
+    },
+    {
+      where: {
+        // only update the teacher that matches the id from the params
+        id: req.params.id,
+      },
+    });
+    //if there is no data for the requested teacher, show 404 error with message
+    if (!teacherData) {
+      res.status(404).json({ message: 'No teacher found with this id!' });
+      return;
+    }
+    //else respond with data of the requested teacher
+    res.status(200).json({ message: 'Teacher successfully updated!'});
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 // remove a teacher from the database using a specific teachers ID /api/teachers/:id
 router.delete("/:id", async (req, res) => {
   try {
