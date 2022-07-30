@@ -6,3 +6,5 @@ const studentRoutes = require('./studentRoutes')
 router.use('/schools', schoolRoutes)
 router.use('/teachers', teacherRoutes)
 router.use('/students', studentRoutes)
+
+module.exports = router;

@@ -8,16 +8,16 @@ School.hasMany(Teacher, {
 });
 
 Teacher.belongsTo(School, {
-    foreignKey, 'school_id',
+    foreignKey: 'school_id',
 });
 
 Teacher.hasMany(Student, {
-    foreignKey, 'teacher_id',
+    foreignKey: 'teacher_id',
     onDelete: 'CASCADE',
 });
 
 Student.belongsTo(Teacher, {
-    foreignKey, 'teacher_id',
+    foreignKey: 'teacher_id',
 });
 
-module.exports = { School, Department, Teacher, Student }
+module.exports = { School, Teacher, Student }

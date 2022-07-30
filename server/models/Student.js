@@ -35,4 +35,4 @@ Student.init(
   }
 );
 
-module.exports = Project;
+module.exports = Student;
