@@ -36,4 +36,4 @@ Teacher.init(
   }
 );
 
-module.exports = Project;
+module.exports = Teacher;

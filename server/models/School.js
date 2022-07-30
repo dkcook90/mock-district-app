@@ -37,4 +37,4 @@ School.init(
   }
 );
 
-module.exports = Project;
+module.exports = School;

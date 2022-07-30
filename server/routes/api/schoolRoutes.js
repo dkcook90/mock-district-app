@@ -62,7 +62,7 @@ router.delete("/:id", async (req, res) => {
       return;
     }
     // if the school is deleted then respond with a message 
-    res.status(200).json({ message: `${schoolData.name} successfully deleted!`});
+    res.status(200).json({ message: 'School successfully deleted!'});
   } catch (err) {
     res.status(500).json(err);
   }
