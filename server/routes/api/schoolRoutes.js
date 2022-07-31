@@ -73,13 +73,14 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-// remove a school from the database using a specific schools ID /api/schools/:id
-router.delete('/:id', async (req, res) => {
+// remove a school from the database using a specific schools ID /api/schools/deleteSchool
+router.delete('/deleteSchool', async (req, res) => {
+  console.log(req.body)
   try {
     const schoolData = await School.destroy({
         // our WHERE will ensure that only the school with a matching ID from the req params will be deleted
       where: {
-        id: req.params.id,
+        id: req.body.id,
       },
     });
     // if there is no school found in the database with the ID in the params respond with a 404 and a message
