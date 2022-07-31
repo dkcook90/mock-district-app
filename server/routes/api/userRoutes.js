@@ -23,6 +23,7 @@ router.post('/signup', async (req, res) => {
   });
 
 router.post('/login', async (req, res) => {
+  console.log(req.body)
     try {
       const userData = await User.findOne({ where: { email: req.body.email }});
       console.log(userData)
@@ -30,6 +31,7 @@ router.post('/login', async (req, res) => {
         res.status(200).json({ message: 'Sorry, no user found with that email'})
       }
       if (userData.checkPassword(req.body.password)){
+        console.log('passwords match')
         return res.json({ token: jwt.sign({ email: userData.email, name: userData.name }, process.env.secret, { expiresIn: expiration })})
       }
       res.status(200).json({ message: 'Password is incorrect' });
