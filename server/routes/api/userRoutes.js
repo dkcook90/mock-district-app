@@ -1,8 +1,6 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 const jwt = require('jsonwebtoken');
-
-const secret = 'isLoggedIn'
 const expiration = '1h'
 
 router.get('/', async (req, res) => {
@@ -18,7 +16,7 @@ router.get('/', async (req, res) => {
 router.post('/signup', async (req, res) => {
     try {
       const userData = await User.create(req.body);
-      res.status(200).json(userData);
+      res.json({ token: jwt.sign({ email: userData.email, name: userData.name }, process.env.secret, { expiresIn: expiration })})
     } catch (err) {
       res.status(500).json(err);
     }
@@ -32,7 +30,7 @@ router.post('/login', async (req, res) => {
         res.status(200).json({ message: 'Sorry, no user found with that email'})
       }
       if (userData.checkPassword(req.body.password)){
-        return res.json({ token: jwt.sign({ email: userData.email, name: userData.name }, secret, { expiresIn: expiration })})
+        return res.json({ token: jwt.sign({ email: userData.email, name: userData.name }, process.env.secret, { expiresIn: expiration })})
       }
       res.status(200).json({ message: 'Password is incorrect' });
     } catch (err) {
