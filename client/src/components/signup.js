@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
-import {Container, Row, Col} from 'react-bootstrap'
+import { Container, Row, Col, Button, Form } from 'react-bootstrap'
 import Auth from "../utils/auth";
 
 function Signup() {
