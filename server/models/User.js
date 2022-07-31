@@ -1,4 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
+//password hashing library for our users passwords
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 

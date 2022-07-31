@@ -1,6 +1,7 @@
 const School = require('./School')
 const Teacher = require('./Teacher')
 const Student = require('./Student')
+const User = require('./User')
 
 School.hasMany(Teacher, {
     foreignKey: 'school_id',
@@ -20,4 +21,4 @@ Student.belongsTo(Teacher, {
     foreignKey: 'teacher_id',
 });
 
-module.exports = { School, Teacher, Student }
+module.exports = { School, Teacher, Student, User }
