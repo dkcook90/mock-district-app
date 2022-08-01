@@ -18,6 +18,11 @@ The Mock School District App is a sample full stack application that allows user
 **Server:** Node, Express, Bcrypt, dotENV, JSON Web Tokens, mysql2, sequelize
 
 
+## MySQL Table Relations
+
+![Table Relation Map](./assets/tableRelations.jpeg)
+
+
 ## Demo
 
 [Click here for a video demo](https://drive.google.com/file/d/1r1QK_0UgNVw5RZGBe6HwLZ-JfgVM6_H9/view)
