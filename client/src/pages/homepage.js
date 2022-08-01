@@ -1,24 +1,19 @@
-import React, { useEffect } from 'react';
-import Signup from '../components/signup'
-import Auth from '../utils/auth'
-import Dashboard from './dashboard';
+import React, { useEffect } from "react";
+import Signup from "../components/signup";
+import Auth from "../utils/auth";
+import Dashboard from "./dashboard";
 
 function Home() {
-
   const reRoute = () => {
-    if(Auth.loggedIn()) {
-      return <Dashboard />
+    //conditional rendering function, if the user is logged in show the dashboard, else show the signup page
+    if (Auth.loggedIn()) {
+      return <Dashboard />;
     } else {
-      return <Signup />
+      return <Signup />;
     }
   };
 
+  return <>{reRoute()}</>;
+}
 
-    return (
-      <>
-      {reRoute()}
-      </>
-    );
-  }
-  
-  export default Home;
+export default Home;
