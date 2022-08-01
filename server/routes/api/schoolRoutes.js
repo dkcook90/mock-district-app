@@ -48,7 +48,7 @@ router.post('/', async (req, res) => {
 });
 
 //update data for single school from database by using that schools id from request params /api/schools/:id PUT
-router.put('/:id', async (req, res) => {
+router.put('/updateSchool', async (req, res) => {
   try {
     const schoolData = await School.update({
       // these are the fields we are allowing the user to update, currently it is only the principal and budget as the name and address of the school are not likely to change that frequently
@@ -58,7 +58,7 @@ router.put('/:id', async (req, res) => {
     {
       where: {
         // only update the school that matches the id from the params
-        id: req.params.id,
+        id: req.body.id,
       },
     });
     //if there is no data for the requested school, show 404 error with message
