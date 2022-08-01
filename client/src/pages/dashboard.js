@@ -27,7 +27,7 @@ function Dashboard() {
 
   return (
     <>
-      <Nav user={user} />
+      <Nav user={user} schoolDataFetch={schoolDataFetch} />
       <Container>
         <Row>
         {schoolData ? schoolData.map((school) => {
