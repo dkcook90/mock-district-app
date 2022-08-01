@@ -70,8 +70,8 @@ function AddSchoolModal(props) {
             <Form.Label>Budget</Form.Label>
             <Form.Control type="input" onChange={handleAddSchoolChange} />
           </Form.Group>
-          <Button variant="primary" type="submit">
-            Add School
+          <Button className="m-1" variant="success" type="submit">
+            Add This School
           </Button>
         </Form>
       </Modal.Body>
