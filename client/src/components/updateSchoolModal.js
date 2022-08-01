@@ -59,7 +59,7 @@ function UpdateSchoolModal(props) {
             <Form.Label>Budget</Form.Label>
             <Form.Control type="input" onChange={handleUpdateSchoolChange} />
           </Form.Group>
-          <Button variant="primary" type="submit">
+          <Button className="m-1" variant="warning" type="submit">
             Update
           </Button>
         </Form>
