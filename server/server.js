@@ -1,4 +1,6 @@
+//bring in the routes folder for express to use
 const routes = require('./routes')
+//bring in the express library
 const express = require('express');
 //part of node
 const path = require('path')

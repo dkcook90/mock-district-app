@@ -25,7 +25,7 @@ function AddSchoolModal(props) {
 
   const handleAddSchool = (event) => {
     event.preventDefault();
-    console.log(addSchoolState)
+    console.log(addSchoolState);
     fetch("/api/schools", {
       method: "POST",
       headers: {

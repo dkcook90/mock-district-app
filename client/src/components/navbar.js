@@ -25,12 +25,9 @@ function Navigation(props) {
               Add School
             </Button>
           </Nav.Item>
-            <Button
-              className="btn-primary btn-sm m-1"
-              onClick={Auth.logout}
-            >
-              Logout
-            </Button>
+          <Button className="btn-primary btn-sm m-1" onClick={Auth.logout}>
+            Logout
+          </Button>
         </Nav>
       </Navbar>
       <AddModal
